@@ -6,16 +6,17 @@ import (
 	"strings"
 )
 
-func getGrade(score int) string {
-	if score >= 90 {
+func getGrade2(score int) string {
+	switch {
+	case score >= 90:
 		return "A"
-	} else if score >= 80 {
+	case score >= 80:
 		return "B"
-	} else if score >= 70 {
+	case score >= 70:
 		return "C"
-	} else if score >= 60 {
+	case score >= 60:
 		return "D"
-	} else {
+	default:
 		return "F"
 	}
 }
@@ -31,7 +32,6 @@ func main() {
 
 	for _, str := range strNums {
 		num, _ := strconv.Atoi(str)
-		fmt.Println(getGrade(num))
+		fmt.Println(getGrade2(num))
 	}
-
 }
